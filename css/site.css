@@ -1,0 +1,57 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.field-validation-error,
+.validation-summary-errors {
+    color: #cc0000;
+}
+
+.requiredIcon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.descriptionIcon {
+    margin-left: 5px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.EDITORS input,
+.EDITORS selext,
+.EDITORS textarea {
+    width: 100%;
+}
+
+.EDITORS .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px dotted #cccccc;
+}
+
+.EDITORS .row:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.EDITORS .row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+

@@ -1,0 +1,60 @@
+﻿
+/* ----- RADIO LIST ----- */
+
+icon-radio-list {
+    
+}
+
+.radio-list-option {
+    display: inline-block;
+    width: 10vw;
+    text-align: center;
+}
+
+.radio-list-option-preview {
+
+}
+.radio-list-option-preview img {
+    width: 90%;
+    height: auto;
+}
+
+.radio-list-option-icon {
+    font-size: x-large;
+}
+
+.radio-list-option-label {
+
+}
+
+.radio-list-option-radio {
+
+}
+.radio-list-option-radio input {
+    cursor: pointer !important;
+}
+
+.icon-select-option {
+   min-width: 8vw;
+}
+
+.icon-bool-option {
+    min-width: 6vw;
+}
+
+icon-bool-list .fas,
+icon-select-list .fas {
+    margin-right: 5px;
+}
+
+.btn-check:active + .btn-outline-success, .btn-check:checked + .btn-outline-success, .btn-outline-success.active, .btn-outline-success.dropdown-toggle.show, .btn-outline-success:active {
+    color: #fff;
+    background-color: #339966;
+    border: 1px solid #306d2c;
+}
+
+.btn-check:active + .btn-outline-danger, .btn-check:checked + .btn-outline-danger, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show, .btn-outline-danger:active {
+    color: #fff;
+    background-color: #ff4d4d;
+    border: 1px solid #cc0000;
+}
