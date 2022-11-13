@@ -1,0 +1,176 @@
+﻿@using System.ComponentModel
+@model HomeModelView
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+    <div class="col-12">
+
+    </div>
+</div>
+
+
+<form asp-action="HomeSave" asp-controller="Home" method="POST">
+
+    
+@*    <div class="EDITORS">
+        
+        <div class="row">
+            <div class="col-12">            
+                <text-for asp-for="Product.Id" asp-readonly="false"></text-for>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <text-for asp-for="Product.Name" asp-readonly="false" asp-input-class="custominputclass"></text-for>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <text-for asp-for="Product.Description" asp-readonly="false"></text-for>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            
+            <div>
+                <label asp-for="Product.ProductFrameColor_Id"></label>
+            </div>
+
+            <div class="text-center mt-2">
+                <icon-radio-for asp-for="Product.ProductFrameColor_Id" asp-items="Model.ProductFrameColorsIconSelectList"></icon-radio-for>
+            </div>
+            
+        </div>
+    </div>*@
+    
+    <div asp-validation-summary="All"></div>
+
+
+    <div class="EDITORS mt-5">
+        
+        <div class="row">
+            <div class="col-3">
+                <label asp-for="Product.DisplayOrder"></label>
+            </div>
+            <div class="col-9">
+                <input asp-for="Product.DisplayOrder" type="number" />
+                <div>
+                    <span asp-validation-for="Product.DisplayOrder"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <label asp-for="Product.ProductionStatus_Id"></label>
+                </div>
+            </div>
+            <div class="col-9">
+                <icon-select-for asp-for="Product.ProductionStatus_Id" asp-items="Model.ProductionStatusesIconSelectList" asp-readonly="true"></icon-select-for>
+                <div>
+                    <span asp-validation-for="Product.ProductionStatus_Id"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <label asp-for="Product.IsCustom"></label>
+                </div>
+            </div>
+            <div class="col-9">
+                <icon-bool-for asp-for="Product.IsCustom" asp-readonly="true"></icon-bool-for>
+                <div>
+                    <span asp-validation-for="Product.IsCustom"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <label asp-for="Product.IsDeleted"></label>
+                </div>
+            </div>
+            <div class="col-9">
+                <icon-bool-for asp-for="Product.IsDeleted" asp-readonly="true" asp-hidden="true"></icon-bool-for>
+                <div>
+                    <span asp-validation-for="Product.IsDeleted"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row mt-2">
+        <div class="col-12 text-end">
+            <button type="submit" background-color="info">Submit</button>
+        </div>
+    </div>
+
+</form>
+
+<hr class="mt-5" />
+
+<div class="row">
+    <div class="col-12">
+
+        <img src="uploads/liswood/1.jpg" alt="Alternative text" />
+
+    </div>
+</div>
+
+
+
+<div class="row mt-2">
+    <icon class="text-success" name="home" />
+</div>
+
+<div class="row mt-2">
+    <customer-details for-customername="Product.Name" for-city="Product.Description">
+    </customer-details>  
+</div>
+
+
+
+<div class="row mt-2">
+    
+    <span class="display-2">TOTO JE VIDĚT</span>
+    
+    @Html.RenderRequiredIcon()
+    
+    @*@Html.RenderRequiredIconFor(t => t.Product.Name)*@
+
+</div>
+
+<div class="mt-2">
+    
+    <div><label asp-for="Product.Name"></label></div>
+    <input asp-for="Product.Name" />
+
+    <div><label asp-for="Product.ProductSize_Id"></label></div>
+    <select asp-for="Product.ProductSize_Id" asp-items="@Model.ProductSizeSelectList" style="width: 100%"></select>
+    
+    <div><label asp-for="Product.ProductFrameColor_Id"></label></div>
+    <select asp-for="Product.ProductFrameColor_Id" asp-items="@Model.ProductFrameColorsSelectList" style="width: 100%"></select>
+    
+    <div style="width: 100%" class="mt-4">
+        <icon-radio-for asp-for="Product.ProductSize_Id" asp-items="Model.ProductSizeIconSelectList"></icon-radio-for>
+    </div>
+
+</div>

@@ -1,0 +1,181 @@
+﻿@using Utils.Extensions
+@model OrderView
+@{
+    ViewData["Title"] = "Order page";
+}
+
+<div class="row">
+    <div class="col-12 text-center">
+        <div class="display-2">LissWood</div>
+        <div class="display-6">Kousek přírody na vaší zdi</div>
+    </div>
+</div>
+
+<hr class="mt-4 mb-4" />
+
+<form id="orderForm" asp-action="OrderConfirmation" asp-controller="Home" method="Post">
+
+    <div class="EDITORS">
+
+        <div class="row">
+
+            <div class="col-3">
+                <div><label asp-for="OrderKey"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <input asp-for="OrderKey" type="text" readonly="readonly" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div><label asp-for="ProductCount"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <input asp-for="ProductCount" type="text" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-4">
+                <div><label asp-for="Name"></label></div>
+                <div>
+                    <input asp-for="Name" type="text" asp-pla />
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div><label asp-for="Surname"></label></div>
+                <div>
+                    <input asp-for="Surname" type="text" />
+                    <span asp-validation-for="Surname"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div><label asp-for="MaidenName"></label></div>
+                <div>
+                    <input asp-for="MaidenName" type="text" />
+                    <span asp-validation-for="MaidenName"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="EDITORS mt-2">
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="EmailContact"></label></div>
+            </div>
+            <div class="col-9">
+                <div>
+                    <input asp-for="EmailContact" type="text" />
+                    <span asp-validation-for="EmailContact"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="PhoneContact"></label></div>
+            </div>
+            <div class="col-9">
+                <div>
+                    <input asp-for="PhoneContact" type="text" />
+                    <span asp-validation-for="PhoneContact"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="FacebookContact"></label></div>
+            </div>
+            <div class="col-9">
+                <div>
+                    <input asp-for="FacebookContact" type="text" />
+                    <span asp-validation-for="FacebookContact"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="InstagramContact"></label></div>
+            </div>
+            <div class="col-9">
+                <div>
+                    <input asp-for="InstagramContact" type="text" />
+                    <span asp-validation-for="InstagramContact"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="EDITORS mt-2">
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="HaveVoucher"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <icon-bool-for asp-for="HaveVoucher"></icon-bool-for>
+                    <span asp-validation-for="HaveVoucher"></span>
+                </div>
+            </div>
+            <div class="col-3">
+                <div><label asp-for="VoucherNumber"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <input asp-for="VoucherNumber" type="text" />
+                    <span asp-validation-for="HaveVoucher"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div><label asp-for="WeddingDate"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <input asp-for="WeddingDate" type="date" />
+                    <span asp-validation-for="WeddingDate"></span>
+                </div>
+            </div>
+            <div class="col-3">
+                <div><label asp-for="DateOfShipment"></label></div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <input asp-for="DateOfShipment" type="date" />
+                    <span asp-validation-for="DateOfShipment"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <div id="Products">
+        @if (Model.Products.NotNullNotEmpty())
+        {
+            <partial name="_Products" model="Model" />
+        }
+    </div>
+
+</form>
+
+<div id="AddProductContainer" class="mt-3">
+
+    <partial name="_AddProductAjaxFormPartialView" model="Model" />
+
+</div>  

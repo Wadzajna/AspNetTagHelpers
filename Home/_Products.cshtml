@@ -1,0 +1,64 @@
+﻿@using Utils.Extensions
+@using MyCoreWeb2.Controllers
+@model OrderView
+
+<div class="EDITORS mt-3">
+
+    @foreach (var product in Model.Products)
+    {
+        var i = 1;
+
+        <div class="row pt-1 pb-1">
+            <div class="col-1">
+                <span>@(i).</span>
+            </div>
+            <div class="col-2">
+                @product.ProductSize_Id
+            </div>
+            <div class="col-2">
+                @product.ProductLayout_Id
+            </div>
+            <div class="col-2">
+                @product.ProductFrameColor_Id
+            </div>
+            <div class="col-2">
+                @product.Description
+            </div>
+            <div class="col-1">
+
+            </div>
+            <div class="col-2 text-end">
+                <span background-color="">
+                    <icon name="pen-alt" />
+                </span>
+                <span background-color="">
+                    <icon name="trash-alt" />
+                </span>
+            </div>
+        </div>
+
+        i++;
+    }
+
+</div>
+
+                    
+<div class="row mt-2">
+    <div class="col-8">
+        
+        @if (Model.ProductCount != 0 && Model.ProductCount < HomeController.AllowedNumberOfProductsInOneOrder)
+        {
+            <span background-color="info" id="AddAnotherProductBtn" title="Chci více obrazů">
+                <icon name="plus" /> <span>Chci více obrazů (<span id="AddAnotherProductCount">@(HomeController.AllowedNumberOfProductsInOneOrder - Model.ProductCount)</span>)</span>
+            </span>
+        }
+
+    </div>
+    <div class="col-4 text-end">
+
+        <button background-color="success" type="submit" title="Potvrdit objednávku">
+            <icon name="save" /> <span>Potvrdit objednávku</span>
+        </button>
+
+    </div>
+</div>

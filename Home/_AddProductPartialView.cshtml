@@ -1,0 +1,49 @@
+﻿@model OrderView
+
+@*Add product form*@
+<div class="EDITORS">
+    
+    <div class="row pb-4">
+        <div class="col-12 text-center">
+            <div class="fs-4 mb-4">Velikost obrazu</div>
+            <div>
+                <icon-radio-for asp-for="AddProduct.ProductSize_Id" asp-items="Model.ProductSizeIconSelectList"></icon-radio-for>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pb-4">
+        <div class="col-12 text-center">
+            <div class="fs-4 mb-4">Rozložení obrazu</div>
+            <div>
+                <icon-radio-for asp-for="AddProduct.ProductLayout_Id" asp-items="Model.ProductLayoutIconSelectList"></icon-radio-for>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row pb-4">
+        <div class="col-12 text-center">
+            <div class="fs-4 mb-4">Barva rámu obrazu</div>
+            <div>
+                <icon-radio-for asp-for="AddProduct.ProductFrameColor_Id" asp-items="Model.ProductFrameColorsIconSelectList"></icon-radio-for>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row pb-4">
+        <div class="col-12 text-center">
+            <div class="fs-4">Text výpalu</div>
+            <div class="fst-italic">Výpal je vždy v pravém rohu</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-3">
+            <div><label asp-for="AddProduct.Description"></label></div>
+        </div>
+        <div class="col-9">
+            <textarea asp-for="AddProduct.Description" style="width: 100%"></textarea>
+        </div>
+    </div>
+
+</div>
